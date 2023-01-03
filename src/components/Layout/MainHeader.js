@@ -4,7 +4,7 @@ import classes from './MainHeader.module.css'
 
 const MainHeader = () => {
   return (
-    <head className={classes.header}>
+    <header className={classes.header}>
       <h1>ReduxCart</h1>
       <nav>
         <ul>
@@ -13,7 +13,7 @@ const MainHeader = () => {
           </li>
         </ul>
       </nav>
-    </head>
+    </header>
   )
 }
 

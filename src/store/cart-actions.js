@@ -59,7 +59,6 @@ export const sendCartData = (cart) => {
       if (!response.ok) {
         throw new Error('Sending cart data failed')
       }
-      return response
     }
     try {
       await sendRequest()
