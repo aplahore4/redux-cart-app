@@ -35,6 +35,10 @@ export const fetchProductData = () => {
           message: 'Fetching product data failed!',
         })
       )
+    } finally {
+      setTimeout(() => {
+        dispatch(uiActions.hideNotification(null))
+      }, 3000)
     }
   }
 }

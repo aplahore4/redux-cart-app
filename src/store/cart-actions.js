@@ -33,6 +33,10 @@ export const fetchCartData = () => {
           message: 'Fetching cart data failed!',
         })
       )
+    } finally {
+      setTimeout(() => {
+        dispatch(uiActions.hideNotification(null))
+      }, 3000)
     }
   }
 }
@@ -82,6 +86,10 @@ export const sendCartData = (cart) => {
           message: 'Sending cart data failed!',
         })
       )
+    } finally {
+      setTimeout(() => {
+        dispatch(uiActions.hideNotification(null))
+      }, 3000)
     }
   }
 }
