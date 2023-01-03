@@ -1,5 +1,5 @@
-import { cartActions } from './cart-slice'
 import { uiActions } from './ui-slice'
+import { cartActions } from './cart-slice'
 
 export const fetchCartData = () => {
   return async (dispatch) => {
@@ -9,17 +9,19 @@ export const fetchCartData = () => {
       )
 
       if (!response.ok) {
-        throw new Error('Colud not fetch cart data!')
+        throw new Error('Could not fetch cart data!')
       }
 
       const data = await response.json()
+
       return data
     }
+
     try {
       const cartData = await fetchData()
       dispatch(
         cartActions.replaceCart({
-          items: cartData.items,
+          items: cartData.items || [],
           totalQuantity: cartData.totalQuantity,
         })
       )
@@ -28,12 +30,13 @@ export const fetchCartData = () => {
         uiActions.showNotification({
           status: 'error',
           title: 'Error!',
-          message: 'Fetch cart data failed!',
+          message: 'Fetching cart data failed!',
         })
       )
     }
   }
 }
+
 export const sendCartData = (cart) => {
   return async (dispatch) => {
     dispatch(
@@ -57,23 +60,25 @@ export const sendCartData = (cart) => {
       )
 
       if (!response.ok) {
-        throw new Error('Sending cart data failed')
+        throw new Error('Sending cart data failed.')
       }
     }
+
     try {
       await sendRequest()
+
       dispatch(
         uiActions.showNotification({
           status: 'success',
-          title: 'Sucess!',
-          message: 'Sent cart data sucessfully!',
+          title: 'Success!',
+          message: 'Sent cart data successfully!',
         })
       )
     } catch (error) {
       dispatch(
         uiActions.showNotification({
           status: 'error',
-          title: 'Error',
+          title: 'Error!',
           message: 'Sending cart data failed!',
         })
       )
