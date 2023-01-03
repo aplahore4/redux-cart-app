@@ -38,7 +38,7 @@ export const fetchProductData = () => {
     } finally {
       setTimeout(() => {
         dispatch(uiActions.hideNotification(null))
-      }, 3000)
+      }, 2000)
     }
   }
 }

@@ -36,7 +36,7 @@ export const fetchCartData = () => {
     } finally {
       setTimeout(() => {
         dispatch(uiActions.hideNotification(null))
-      }, 3000)
+      }, 2000)
     }
   }
 }
@@ -89,7 +89,7 @@ export const sendCartData = (cart) => {
     } finally {
       setTimeout(() => {
         dispatch(uiActions.hideNotification(null))
-      }, 3000)
+      }, 2000)
     }
   }
 }
