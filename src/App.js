@@ -5,8 +5,7 @@ import Cart from './components/Cart/Cart'
 import Layout from './components/Layout/Layout'
 import Products from './components/Shop/Products'
 import Notification from './components/UI/Notification'
-import { sendCartData, fetchCartData } from './store/cart-actions'
-import { fetchProductData } from './store/product-actions'
+import { sendCartData, fetchCartData, fetchProductData } from './store/service'
 
 let isInitial = true
 
